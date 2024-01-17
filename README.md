@@ -21,7 +21,7 @@ You will see a list of blocks with their hashes being downloaded to the DB.
 
 3. Search database using get-highest-volume-block.py
 ```
-python3 get-highest-volume-block.py
+python get-highest-volume-block.py
 ```
 You will see the block with the highest volume printed:
 
