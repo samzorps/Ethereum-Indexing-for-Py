@@ -7,7 +7,7 @@ c = conn.cursor()
 c.execute("""
 SELECT block_number, timestamp, TOTAL(value) AS total_volume
 FROM transactions
-WHERE block_number BETWEEN 18908800 AND 18909050
+WHERE timestamp BETWEEN 1704067200 AND 1704069000
 GROUP BY block_number
 ORDER BY total_volume DESC
 LIMIT 1
