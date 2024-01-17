@@ -1,6 +1,7 @@
 import web3
 import sqlite3
 import argparse
+from tqdm import tqdm
 
 ENDPOINT_DEFAULT = "https://alien-hardworking-hexagon.quiknode.pro/"
 DB_DEFAULT = "/Users/samzorpette/Desktop/Ethereum Indexing for Py/db.sqlite3"
@@ -23,10 +24,9 @@ c.execute('''CREATE TABLE IF NOT EXISTS transactions
 
 # get all blocks within the given range and save the relevant fields to the database
 start_block, end_block = map(int, args.block_range.split("-"))
-for block_number in range(start_block, end_block + 1):
+for block_number in tqdm(range(start_block, end_block + 1)):
     try:
         block = w3.eth.get_block(block_number, True)  # Include transactions
-        print(w3.to_hex(block.hash), block.number, block.timestamp)
         for transaction in block.transactions:
             # Extract relevant fields and insert into database
             c.execute("INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?)",
