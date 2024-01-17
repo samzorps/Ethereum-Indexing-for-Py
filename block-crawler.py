@@ -26,9 +26,8 @@ start_block, end_block = map(int, args.block_range.split("-"))
 for block_number in range(start_block, end_block + 1):
     try:
         block = w3.eth.get_block(block_number, True)  # Include transactions
-        print(w3.to_hex(block.hash), w3.to_hex(block.number), block.timestamp)
+        print(w3.to_hex(block.hash), block.number, block.timestamp)
         for transaction in block.transactions:
-            print((w3.to_hex(block.hash), w3.to_hex(block.number), block.timestamp))
             # Extract relevant fields and insert into database
             c.execute("INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?)",
                     (str(block.hash), str(block.number), block.timestamp,
