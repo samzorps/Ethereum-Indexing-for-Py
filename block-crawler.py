@@ -2,14 +2,14 @@ import web3
 import sqlite3
 import argparse
 
-ENDPOINT_DEFAULT = "https://alien-hardworking-hexagon.quiknode.pro/3be6fd1ea6eb39233fbdc7a167ca8ff85c082c78/"
+ENDPOINT_DEFAULT = "https://alien-hardworking-hexagon.quiknode.pro/"
 DB_DEFAULT = "/Users/samzorpette/Desktop/Ethereum Indexing for Py/db.sqlite3"
 RANGE_DEFAULT = "18908800-18909050"
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--rpc_endpoint", help="JSON-RPC endpoint URL", default=ENDPOINT_DEFAULT, required=False)
-parser.add_argument("--db_path", help="Path to SQLite database file", default=DB_DEFAULT, required=False)
-parser.add_argument("--block_range", help="Block range in format start-end", default=RANGE_DEFAULT, required=False)
+parser.add_argument("rpc_endpoint", help="JSON-RPC endpoint URL", default=ENDPOINT_DEFAULT)
+parser.add_argument("db_path", help="Path to SQLite database file", default=DB_DEFAULT)
+parser.add_argument("block_range", help="Block range in format start-end", default=RANGE_DEFAULT)
 args = parser.parse_args()
 
 w3 = web3.Web3(web3.HTTPProvider(args.rpc_endpoint))
