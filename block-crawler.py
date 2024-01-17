@@ -21,6 +21,7 @@ c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS transactions
              (block_hash text, block_number text, timestamp text, transaction_hash text, from_address text, to_address text, value text)''')
 
+# get all blocks within the given range and save the relevant fields to the database
 start_block, end_block = map(int, args.block_range.split("-"))
 for block_number in range(start_block, end_block + 1):
     try:
