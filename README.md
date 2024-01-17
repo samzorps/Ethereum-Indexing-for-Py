@@ -23,6 +23,7 @@ You will see a list of blocks with their hashes being downloaded to the DB.
 ```
 python get-highest-volume-block.py
 ```
-You will see the block with the highest volume printed:
+You will see the block with the highest volume transferred between 2024-01-01 00:00:00 and 2024-01-01 00:30:00 UDP printed:
 
-Block with highest volume (block number, timestamp, volume): 18909040, 1704069011, 1.5397723118880007e+21
+Block with highest volume (block number, timestamp, volume): 
+('18908968', '1704068111', 1.3090386419632476e+21)
