@@ -15,7 +15,7 @@ python block-crawler [YOUR API ENDPOINT] [PATH/TO/DATABASE] [RANGE OF BLOCKS TO 
 ```
 Example
 ```
-python block-crawler https://rpc.quicknode.pro/key/[key] db.sqlite3 18908800-18909050
+python block-crawler https://rpc.quicknode.pro/key/[key] ./db.sqlite3 18908800-18909050
 ```
 You will see a list of blocks with their hashes being downloaded to the DB.
 
