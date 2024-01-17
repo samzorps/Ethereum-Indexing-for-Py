@@ -17,7 +17,8 @@ Example
 ```
 python block-crawler https://rpc.quicknode.pro/key/[key] ./db.sqlite3 18908800-18909050
 ```
-You will see a list of blocks with their hashes being downloaded to the DB.
+You will see a progress bar of blocks being downloaded to the DB.
+![Screenshot 2024-01-17 at 11 36 24 AM](https://github.com/samzorps/Ethereum-Indexing-for-Py/assets/63939307/f8ed64da-2e8e-47cf-b124-18bd6965f8e5)
 
 3. Search database using get-highest-volume-block.py
 ```
